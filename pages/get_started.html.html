@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!---==========Fav-Icon=============----->
+     <link rel="shortcut icon" href="url_image.jpeg">
+    <title>VisitorON</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Landing Section -->
+        <section id="landing" class="section">
+            <div class="hero">
+                <div class="logo-container">
+                    <img src="logo.png" alt="VisitorON Logo">
+                </div>
+                <h1>Welcome to VisitorON</h1>
+                <p>Your smart digital visitor management system.</p>
+                <button id="sign-up-btn" class="btn btn-primary">Sign-Up</button>
+                <button id="short-tour-btn" class="btn btn-primary">Short-Tour</button>
+            </div>
+        </section>
+
+        <section id="signup" class="section hidden">
+            <div class="logo-container">
+                <img src="logo.png" alt="VisitorON Logo">
+            </div>
+            <p>Create an account to begin a free trial or paid plan</p>
+            <form id="signup-form">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+                    </div>
+                </div>
+        
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+        
+                <label for="industry">Industry</label>
+                <input type="text" id="industry" name="industry" placeholder="Enter your industry" required>
+        
+                <label for="company-name">Company Name</label>
+                <input type="text" id="company-name" name="company-name" placeholder="Enter your company name" required>
+        
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter your location" required>
+        
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+                <p>Password must be atleast 8 characters and contain atleast one capital letter, one lowercase
+                    letter and one number</p>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </section>
+        
+        <!-- Onboarding/Tutorial Section -->
+        <section id="tutorial" class="section hidden">
+            <div class="logo-container">
+                <img src="logo.png" alt="VisitorON Logo">
+            </div>
+            <h2>THREE STEP TOUR-GUIDE</h2>
+            <div class="tutorial-step active" id="step-1">
+                <h2>Step 1: Add Visitors</h2>
+                <p>Easily add new visitors by scanning their ID or manually entering their details.</p>
+                <button class="btn btn-primary next-step" data-next="step-2">Next</button>
+            </div>
+
+            <div class="tutorial-step" id="step-2">
+                <h2>Step 2: Review and Track</h2>
+                <p>Review visitor details and track their visit history with ease.</p>
+                <button class="btn btn-primary next-step" data-next="step-3">Next</button>
+            </div>
+
+            <div class="tutorial-step" id="step-3">
+                <h2>Step 3: Manage Visitors</h2>
+                <p>Manage, edit, or delete visitor records and get insights into visitor activity.</p>
+                <button class="btn btn-primary complete-tutorial">Finish & Sign-Up</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Powered by infiware solution Ltd copyright &copy; 2024.</p>
+        </footer>
+    </div>
+</body>
+</html>
