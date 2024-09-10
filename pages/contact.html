@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisitorON</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!------==========import-poppins-font============-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!--------------font awesome for icons------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+     main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+
+        }
+        
+        .contact-form, .info-panel {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+        
+        .contact-form h2, .info-panel h2 {
+            margin-top: 0;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+        }
+        
+        .contact-form button {
+            background-color: #0f8ff8;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .contact-form button:hover {
+            background-color: #555;
+        }
+        
+        .info-panel h2 {
+            margin-top: 0;
+        }
+        
+        .info-panel ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .info-panel li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-panel a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .info-panel a:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+  <!--========HOME SECTION============================-->
+<section id="hero">
+    <!---============nav area============-->
+    <nav class="navigation">
+    <!----menu-btn-->
+    <input type="checkbox" class="menu-btn" id="menu-btn" style="display: none;">
+    <label for="menu-btn" class="menu-icon">
+        <span class="nav-icon"></span>
+    </label>
+    
+        <!---=====logo=====-->
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="VisitorON Logo" style="height: 50px; border-radius: 5px;">
+        </a>
+        
+        <!--menu-->
+        <ul class="menu">
+            <li><a href="#">Find Help</a>
+             <!-- Sub-menu -->
+             <ul class="submenu">
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+            </li>
+            <li><a href="#">Solutions</a>
+                 <!-- Sub-menu -->
+                <ul class="submenu">
+                <li><a href="#">Visitor Management</a></li>
+                <li><a href="#">Integrations</a></li>
+                <li><a href="#">Applications</a></li>
+            </ul>
+            </li>
+            <li><a href="#">Pricing</a>
+                <!-- Sub-menu -->
+                <ul class="submenu">
+                    <li><a href="#">Plans</a></li>
+                    <li><a href="#">Get Quote</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Industries</a>
+                  <!-- Sub-menu -->
+                  <ul class="submenu">
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Real estate</a></li>
+                    <li><a href="#">Government</a></li>
+                    <li><a href="#">Law</a></li>
+                    <li><a href="#">Healthcare</a></li>
+                    <li><a href="#">Banking & Finance</a></li>
+                    <li><a href="#">Manufacturing</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-search"></i></a>
+                  <!-- Sub-menu -->
+                  <ul class="submenu">
+                    <li> <input type="text" placeholder="visitoron">
+                        <button>GO</button>
+                    </li>
+                </ul>
+                <li><a href="#"><span class="vertical-line"></span></a></li>
+                <li><a href="login.html" class="login"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
+    
+        </ul>
+    
+        <!------Assessment Btn===========-->
+        <a href="pages/get_started.html.html" class="nav-assessment-btn">Get Started</a>
+    </nav>
+    <!-----==nav end==-->
+    
+    <!----============content============-->
+        
+    <main>
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>Get in Touch</h2>
+                <form action="/submit_form" method="POST">
+                    <label for="first_name">Name</label>
+                    <input type="text" id="first_name" name="first_name" required>
+
+                    <label for="company_name">Business</label>
+                    <input type="text" id="company_name" name="company_name">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+
+                    <label for="phone_number">Phone Number</label>
+                    <input type="tel" id="phone_number" name="phone_number">
+
+                    <label for="message">Request Message:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Your message here"></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="info-panel">
+                <h2>Quick Inquery</h2>
+                <ul>
+                    <li>TEL: 
+                        <a href="tel:+0715465463"> +254 700 010101 </a>
+                    </li>
+                    <li>Email Us: 
+                        <a href="mailto:help@VisitorOn.com">help@VisitorOn.com</a>
+                    </li>
+                    <li style="color: green;">Whatsapp: 
+                        <a href="mailto:help@VisitorOn.com" style="color: green;">+254 700 010101</a>
+                    </li>
+                    <li>Follow Us:
+                         <!---social-icons-->
+                         <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-x"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </main>
+    <!---====Footer====-->
+                <section>
+                    <footer>
+                        <div class="footer-container">
+                            
+                            <!-----***company-box****-->
+                            <div class="footer-company-box">
+                                <!---details-->
+                                <p>Contact Our dedicated team, through social links.</p>
+                                <!---social-icons-->
+                                <div class="footer-social">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-x"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div><!----------company-box-end------>
+                            <!---********link************-->
+                            <div class="footer-link-box">
+                                <strong>Main Link's</strong>
+                                <ul>
+                                    <li><a href="#">Find-help</a></li>
+                                    <li><a href="#">Solutions</a></li>
+                                    <li><a href="#">Industries</a></li>
+                                    <li><a href="#">Pricing</a></li>
+                                    <li><a href="#">Login</a></li>
+                                </ul>
+                            </div><!----------link-box-end------>
+                            <!---********link************-->
+                            <div class="footer-link-box">
+                            </div><!----------link-box-end------>
+                        </div><!----====container-end====-->
+    
+                        <!---****bottom-footer****-->
+                        <div class="footer-bottom">
+                            <span>Powered By Infiware Solution Ltd Copyright &copy; 2024</span>
+                        </div>
+                    </footer>
+                    </section>
+</body>
+</html>
