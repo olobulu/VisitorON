@@ -17,36 +17,85 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .container {
-            background-color: #e2b0b00a;
-            max-width: 1000px;
-            min-height: 400px;
-            margin: 20px auto; /* Horizontal centering */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            text-align: center; /* Ensure text is centered inside the container */
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-
-        h1.large-font {
+        
+        .banner {
+            max-width: 100%;
+            height: 600px;
+            background-image: url('images/nairobi.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            clip-path: ellipse(80% 100% at 50% 0%); /* Curved top edge */
+        }
+        
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
+            height: 100%;
+            width: 100%;
+            position: relative;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .overlay h1{
             max-width: 800px;
-            text-align: center; /* Ensure text is centered inside the container */
-            margin: 20px auto; /* Horizontal centering */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            font-size: 3em;
-            color: #000;
-            text-align: center;
-            margin-top: 30px;
+            font-size: 50px;
+            color: red;
         }
-
-        p.small-font {
-            font-size: 1.2em;
-            text-align: center;
-            margin-top: -10px;
-            color: #000;
+        .overlay p{
+            max-width: 500px;
+            font-size: 20px;
+            font-weight: bold;
         }
-
+        nav {
+            position: absolute;
+            top: 20px; /* Distance from the top */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px; /* Space between menu items */
+        }
+        
+        nav ul li {
+            display: inline;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+        }
+        
+        .overlay h1, .overlay p {
+            margin: 10px 0;
+            z-index: 1;
+        }
+       
+       
         .section-content {
             display: flex;
             justify-content: space-between;
@@ -65,7 +114,7 @@
             
             .section-header {
                 font-size: 3rem;
-                color: #000;
+                color: green;
                 margin-bottom: 20px;
             }
             
@@ -133,81 +182,71 @@
     </style>
 </head>
 <body>
-  <!--========HOME SECTION============================-->
-<section id="hero">
-    <!---============nav area============-->
-    <nav class="navigation">
-    <!----menu-btn-->
-    <input type="checkbox" class="menu-btn" id="menu-btn" style="display: none;">
-    <label for="menu-btn" class="menu-icon">
-        <span class="nav-icon"></span>
-    </label>
+    <div class="banner">
+        <div class="overlay">
+            <nav>
+                  <!---=====logo=====-->
+    <a href="#" class="logo">
+        <img src="images/logo.png" alt="VisitorON Logo" style="height: 50px; border-radius: 5px;">
+    </a>
     
-        <!---=====logo=====-->
-        <a href="#" class="logo">
-            <img src="images/logo.png" alt="VisitorON Logo" style="height: 50px; border-radius: 5px;">
-        </a>
-        
-        <!--menu-->
-        <ul class="menu">
-            <li><a href="#">Find Help</a>
-             <!-- Sub-menu -->
-             <ul class="submenu">
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Resources</a></li>
-            </ul>
-            </li>
-            <li><a href="#">Solutions</a>
-                 <!-- Sub-menu -->
-                <ul class="submenu">
-                <li><a href="#">Visitor Management</a></li>
-                <li><a href="#">Integrations</a></li>
-                <li><a href="#">Applications</a></li>
-            </ul>
-            </li>
-            <li><a href="#">Pricing</a>
-                <!-- Sub-menu -->
-                <ul class="submenu">
-                    <li><a href="#">Plans</a></li>
-                    <li><a href="#">Get Quote</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Industries</a>
-                  <!-- Sub-menu -->
-                  <ul class="submenu">
-                    <li><a href="#">Education</a></li>
-                    <li><a href="#">Real estate</a></li>
-                    <li><a href="#">Government</a></li>
-                    <li><a href="#">Law</a></li>
-                    <li><a href="#">Healthcare</a></li>
-                    <li><a href="#">Banking & Finance</a></li>
-                    <li><a href="#">Manufacturing</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class="fa fa-search"></i></a>
-                  <!-- Sub-menu -->
-                  <ul class="submenu">
-                    <li> <input type="text" placeholder="visitoron">
-                        <button>GO</button>
-                    </li>
-                </ul>
-                <li><a href="#"><span class="vertical-line"></span></a></li>
-                <li><a href="login.html" class="login"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
-    
+              <!--menu-->
+    <ul class="menu">
+        <li><a href="#">Find Help</a>
+         <!-- Sub-menu -->
+         <ul class="submenu">
+            <li><a href="pages/contact.html">Contact</a></li>
+            <li><a href="pages/About.html">About</a></li>
+            <li><a href="#">Resources</a></li>
         </ul>
-    
-        <!------Assessment Btn===========-->
-        <a href="pages/get_started.html.html" class="nav-assessment-btn">Get Started</a>
-    </nav>
-    <!-----==nav end==-->
-    
-    <!----============content============-->
-    <div class="container">
-        <h1 class="large-font">Life is much better when humans have the best experiences</h1>
-        <p class="small-font">We strive every day to get the best experience. We’re here to help you streamline your visitor management processes so they can be safer, more secure, and more efficient.</p>
-    </div>
+        </li>
+        <li><a href="#">Solutions</a>
+             <!-- Sub-menu -->
+            <ul class="submenu">
+            <li><a href="#">Visitor Management</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Applications</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Pricing</a>
+            <!-- Sub-menu -->
+            <ul class="submenu">
+                <li><a href="#">Plans</a></li>
+                <li><a href="#">Get Quote</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Industries</a>
+              <!-- Sub-menu -->
+              <ul class="submenu">
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Real estate</a></li>
+                <li><a href="#">Government</a></li>
+                <li><a href="#">Law</a></li>
+                <li><a href="#">Healthcare</a></li>
+                <li><a href="#">Banking & Finance</a></li>
+                <li><a href="#">Manufacturing</a></li>
+            </ul>
+        </li>
+        <li><a href="#"><i class="fa fa-search"></i></a>
+              <!-- Sub-menu -->
+              <ul class="submenu">
+                <li> <input type="text" placeholder="visitoron">
+                    <button>GO</button>
+                </li>
+            </ul>
+            <li><a href="#"><span class="vertical-line"></span></a></li>
+            <li><a href="pages/login.html" class="login"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
 
+    </ul>
+
+    <!------Assessment Btn===========-->
+    <a href="pages/get_started.html.html" class="nav-assessment-btn">Get Started</a>
+    </nav>
+    <h1 class="large-font">Life is much better when humans have the best experiences</h1>
+    <p class="small-font">We strive every day to get the best experience. We’re here to help you streamline your visitor management processes so they can be safer, more secure, and more efficient.</p>
+
+    </div>
+    </div>
      <div class="section-content">
             <div class="section-text">
                 <h2 class="section-header">What got us here</h2>
@@ -215,7 +254,7 @@
                 <p>We help you create exceptional, modern experiences for both employees and visitors, enabling seamless collaboration.</p>
                 <p>Make data-driven decisions with confidence. We give you a unified platform that provides insights on utilization, combining occupancy data and space usage analysis to help you make the right decisions.</p>
             </div>
-            <img src="images/VisitorON-landing1.jpg" alt="Digital Experience">
+            <img src="images/got_us_here.jpg" alt="Digital Experience">
         </div>
 
         <h2 style="text-align: center; font-size: 3em; margin-top: 50px;">We’re trusted</h2>
@@ -242,362 +281,6 @@
            
         </div>
     </div>
-
-
-    
-                <!-----=========Testimonials========------->
-                <section id="testimonials">
-
-                    <!---**heading***********-->
-                    <div class="testimonials-heading">
-                        <h3>VISITORON DEDICATED TEAM</h3>
-                        <p>"VisitorON is backed by a dedicated team of developers, support technicians,
-                             programmers, designers, analysts, managers, and our CEO, all working together with our valued clients worldwide." </div>
-
-                    <!------*****testimonials-content********---------->
-                    <div class="testimonials-content">
-                        <!------img*****-->
-                        <div class="testimonials-img">
-                            <img src="images/logo.jpeg" alt="">
-                        </div>
-
-                        <!--------**container*********-->
-                        <div class="testimonials-box-container">
-
-
-                            <!-----Swiper---->
-                            <div class="swiper mySwipertest">
-                                <div class="swiper-wrapper">
-                                    
-                    <!-----slide1-*******-------->
-                                    <div class="swiper-slide">
-                    <!-----====Box===------>
-                            <div class="testimonials-box">
-                                <!----profile==-->
-                                <div class="t-profile">
-                                    <!---img-->
-                                    <div class="t-profile-img">
-                                        <img src="images/gallary1.jpeg" alt="">
-                                    </div>
-                                    <!---text-->
-                                    <div class="t-profile-text">
-                                        <strong>DANSON MUKILE</strong>
-                                        <span>CEO</span>
-                                        <!----rating===-->
-                                        <div class="t-rating">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div><!---profile-end--->
-
-                                <!-----feedback------->
-                                <p>Danson is the CEO to VISITORON and also System Dev .</p>
-                                
-                            </div><!----box-end----->
-
-                                    </div><!----slide-end-->
-
-                                     <!-----slide1-*******-------->
-                                     <div class="swiper-slide">
-                                        <!-----====Box===------>
-                                                <div class="testimonials-box">
-                                                    <!----profile==-->
-                                                    <div class="t-profile">
-                                                        <!---img-->
-                                                        <div class="t-profile-img">
-                                                            <img src="images/daniel" alt="">
-                                                        </div>
-                                                        <!---text-->
-                                                        <div class="t-profile-text">
-                                                            <strong>BETTY  MWENDE</strong>
-                                                            <span>Project-Manager</span>
-                                                            <!----rating===-->
-                                                            <div class="t-rating">
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div><!---profile-end--->
-                    
-                                                    <!-----feedback------->
-                                                    <p>Betty coordinate the team and review progress.</p>
-                                                    
-                                                </div><!----box-end----->
-                    
-                                                        </div><!----slide-end-->
-
-                                    <!-----slide2-*******-------->
-                                    <div class="swiper-slide">
-                                        <!-----====Box===------>
-                                                <div class="testimonials-box">
-                                                    <!----profile==-->
-                                                    <div class="t-profile">
-                                                        <!---img-->
-                                                        <div class="t-profile-img">
-                                                            <img src="images/japhet" alt="">
-                                                        </div>
-                                                        <!---text-->
-                                                        <div class="t-profile-text">
-                                                            <strong>PETER MUNTERE</strong>
-                                                            <span>FRONT-END DEV</span>
-                                                            <!----rating===-->
-                                                            <div class="t-rating">
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div><!---profile-end--->
-
-                                                    
-                    
-                                                    <!-----feedback------->
-                                                    <p>Peter is a front-end developer and lead of the front-end team.</p>
-                                                    
-                                                </div><!----box-end----->
-                    
-                                                        </div><!----slide-end-->
-
-                                                         <!-----slide1-*******-------->
-                                    <div class="swiper-slide">
-                                        <!-----====Box===------>
-                                                <div class="testimonials-box">
-                                                    <!----profile==-->
-                                                    <div class="t-profile">
-                                                        <!---img-->
-                                                        <div class="t-profile-img">
-                                                            <img src="images/jacob.enc" alt="">
-                                                        </div>
-                                                        <!---text-->
-                                                        <div class="t-profile-text">
-                                                            <strong>EDWIN</strong>
-                                                            <span>FRONT-END DEV</span>
-                                                            <!----rating===-->
-                                                            <div class="t-rating">
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div><!---profile-end--->
-                    
-                                                    <!-----feedback------->
-                                                    <p>Edwin is among the front-end team</p>
-                                                    
-                                                </div><!----box-end----->
-                    
-                                                        </div><!----slide-end-->
-
-                                                        <!-----slide3-*******-------->
-                                    <div class="swiper-slide">
-                                        <!-----====Box===------>
-                                                <div class="testimonials-box">
-                                                    <!----profile==-->
-                                                    <div class="t-profile">
-                                                        <!---img-->
-                                                        <div class="t-profile-img">
-                                                            <img src="images/kishanto" alt="">
-                                                        </div>
-                                                        <!---text-->
-                                                        <div class="t-profile-text">
-                                                            <strong>SALLIE</strong>
-                                                            <span>FRONT-END DEV</span>
-                                                            <!----rating===-->
-                                                            <div class="t-rating">
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div><!---profile-end--->
-                    
-                                                    <!-----feedback------->
-                                                    <p>Sallie is among the front-end team</p>
-                                                    
-                                                </div><!----box-end----->
-                    
-                                                        </div><!----slide-end-->
-
-                                                         <!-----slide1-*******-------->
-                                    <div class="swiper-slide">
-                                        <!-----====Box===------>
-                                                <div class="testimonials-box">
-                                                    <!----profile==-->
-                                                    <div class="t-profile">
-                                                        <!---img-->
-                                                        <div class="t-profile-img">
-                                                            <img src="images/kimoso" alt="">
-                                                        </div>
-                                                        <!---text-->
-                                                        <div class="t-profile-text">
-                                                            <strong>DAVIN</strong>
-                                                            <span>DESIGNER</span>
-                                                            <!----rating===-->
-                                                            <div class="t-rating">
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div><!---profile-end--->
-                    
-                                                    <!-----feedback------->
-                                                    <p>Davin is a designer and also front-end dev</p>
-                                                    
-                                                </div><!----box-end----->
-                    
-                                                        </div><!----slide-end-->
-
-                                                         <!-----slide1-*******-------->
-                                    <div class="swiper-slide">
-                                        <!-----====Box===------>
-                                                <div class="testimonials-box">
-                                                    <!----profile==-->
-                                                    <div class="t-profile">
-                                                        <!---img-->
-                                                        <div class="t-profile-img">
-                                                            <img src="images/shadrack" alt="">
-                                                        </div>
-                                                        <!---text-->
-                                                        <div class="t-profile-text">
-                                                            <strong>DENNIS GITONGA</strong>
-                                                            <span>BACK-END DEV</span>
-                                                            <!----rating===-->
-                                                            <div class="t-rating">
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div><!---profile-end--->
-                    
-                                                    <!-----feedback------->
-                                                    <p>Dennis is a back-end developer and the lead back-end team.</p>
-                                                    
-                                                </div><!----box-end----->
-                    
-                                                        </div><!----slide-end-->
-
-                                                         <!-----slide1-*******-------->
-                                    <div class="swiper-slide">
-                                        <!-----====Box===------>
-                                                <div class="testimonials-box">
-                                                    <!----profile==-->
-                                                    <div class="t-profile">
-                                                        <!---img-->
-                                                        <div class="t-profile-img">
-                                                            <img src="images/josphat" alt="">
-                                                        </div>
-                                                        <!---text-->
-                                                        <div class="t-profile-text">
-                                                            <strong>SHALEEN</strong>
-                                                            <span>UI/UX DESIGNER</span>
-                                                            <!----rating===-->
-                                                            <div class="t-rating">
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div><!---profile-end--->
-                    
-                                                    <!-----feedback------->
-                                                    <p>Shaleen is the UI/UX designer and team lead</p>
-                                                    
-                                                </div><!----box-end----->
-                    
-                                                </div><!----slide-end-->
-                                                <div class="swiper-slide">
-                                                    <!-----====Box===------>
-                                                            <div class="testimonials-box">
-                                                                <!----profile==-->
-                                                                <div class="t-profile">
-                                                                    <!---img-->
-                                                                    <div class="t-profile-img">
-                                                                        <img src="images/shadrack" alt="">
-                                                                    </div>
-                                                                    <!---text-->
-                                                                    <div class="t-profile-text">
-                                                                        <strong>VINCENT</strong>
-                                                                        <span>BACK-END DEV</span>
-                                                                        <!----rating===-->
-                                                                        <div class="t-rating">
-                                                                            <i class="fa-solid fa-star"></i>
-                                                                            <i class="fa-solid fa-star"></i>
-                                                                            <i class="fa-solid fa-star"></i>
-                                                                            <i class="fa-solid fa-star"></i>
-                                                                            <i class="fa-solid fa-star"></i>
-                                                                        </div>
-                                                                    </div>
-                                                                </div><!---profile-end--->
-                                                            </div><!----slide-end-->
-                                
-                                                                <!-----feedback------->
-                                                                <p>Vincent is a back-end developer.</p>
-                                                                
-                                                            </div><!----box-end----->
-                                                            <div class="swiper-slide">
-                                                                <!-----====Box===------>
-                                                                        <div class="testimonials-box">
-                                                                            <!----profile==-->
-                                                                            <div class="t-profile">
-                                                                                <!---img-->
-                                                                                <div class="t-profile-img">
-                                                                                    <img src="images/shadrack" alt="">
-                                                                                </div>
-                                                                                <!---text-->
-                                                                                <div class="t-profile-text">
-                                                                                    <strong>JMUBIA</strong>
-                                                                                    <span>DATABASE</span>
-                                                                                    <!----rating===-->
-                                                                                    <div class="t-rating">
-                                                                                        <i class="fa-solid fa-star"></i>
-                                                                                        <i class="fa-solid fa-star"></i>
-                                                                                        <i class="fa-solid fa-star"></i>
-                                                                                        <i class="fa-solid fa-star"></i>
-                                                                                        <i class="fa-solid fa-star"></i>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div><!---profile-end--->
-                                                                        </div><!----slide-end-->
-                                            
-                                                                            <!-----feedback------->
-                                                                            <p>Jmubia is Database Administrator.</p>
-                                                                            
-                                                                        </div><!----box-end----->
-
-
-                                </div><!---------wrapper==--end-->
-                                <div class="swiper-pagination"></div>
-                            </div><!----swiper--end==-->
-
-
-                            
-                        </div><!---------container-end--------->
-
-                    </div><!----------content-end-------->
-                </section><!----=======testimonials-end=========-->
-
-
     <!---====Footer====-->
                 <section>
                     <footer>
