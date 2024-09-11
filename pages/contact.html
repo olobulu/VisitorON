@@ -14,213 +14,261 @@
     <!--------------font awesome for icons------------>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-     main {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .contact-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-
-        }
-        
-        .contact-form, .info-panel {
-            background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            flex: 1;
-        }
-        
-        .contact-form h2, .info-panel h2 {
-            margin-top: 0;
-        }
-        
-        .contact-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        
-        .contact-form input,
-        .contact-form select,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        body, html {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
         
-        .contact-form textarea {
-            resize: vertical;
+        .banner {
+            max-width: 100%;
+            height: 600px;
+            background-image: url('images/nairobi.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            clip-path: ellipse(80% 100% at 50% 0%); /* Curved top edge */
         }
         
-        .contact-form button {
-            background-color: #0f8ff8;
-            color: #fff;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        
-        .contact-form button:hover {
-            background-color: #555;
-        }
-        
-        .info-panel h2 {
-            margin-top: 0;
-        }
-        
-        .info-panel ul {
-            list-style-type: none;
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
+            height: 100%;
+            width: 100%;
+            position: relative;
+            color: white;
+            text-align: center;
+            margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         
-        .info-panel li {
-            margin-bottom: 0.5rem;
+        nav {
+            position: absolute;
+            top: 20px; /* Distance from the top */
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
         
-        .info-panel a {
-            color: #333;
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px; /* Space between menu items */
+        }
+        
+        nav ul li {
+            display: inline;
+        }
+        
+        nav ul li a {
             text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
         
-        .info-panel a:hover {
-            text-decoration: underline;
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
         }
         
+        .overlay h1, .overlay p {
+            margin: 10px 0;
+            z-index: 1;
+        }
+       
+        /* Pop-up form styling */
+.form-popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    box-shadow: 0px 10px 30px rgba(211, 187, 187, 0.5);
+    z-index: 1000;
+    width: 350px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+}
+
+.form-container label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.form-container input, .form-container textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input:focus, .form-container textarea:focus {
+    border-color: #17acf1;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #17acf1;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0b87c6;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Optional: Add a background blur when the form is open */
+body.form-active {
+    overflow: hidden;
+    filter: blur(3px);
+}
+
     </style>
 </head>
 <body>
-  <!--========HOME SECTION============================-->
-<section id="hero">
-    <!---============nav area============-->
-    <nav class="navigation">
-    <!----menu-btn-->
-    <input type="checkbox" class="menu-btn" id="menu-btn" style="display: none;">
-    <label for="menu-btn" class="menu-icon">
-        <span class="nav-icon"></span>
-    </label>
+    <div class="banner">
+        <div class="overlay">
+            <nav>
+                  <!---=====logo=====-->
+    <a href="#" class="logo">
+        <img src="images/logo.png" alt="VisitorON Logo" style="height: 50px; border-radius: 5px;">
+    </a>
     
-        <!---=====logo=====-->
-        <a href="#" class="logo">
-            <img src="images/logo.png" alt="VisitorON Logo" style="height: 50px; border-radius: 5px;">
-        </a>
-        
-        <!--menu-->
-        <ul class="menu">
-            <li><a href="#">Find Help</a>
-             <!-- Sub-menu -->
-             <ul class="submenu">
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Resources</a></li>
-            </ul>
-            </li>
-            <li><a href="#">Solutions</a>
-                 <!-- Sub-menu -->
-                <ul class="submenu">
-                <li><a href="#">Visitor Management</a></li>
-                <li><a href="#">Integrations</a></li>
-                <li><a href="#">Applications</a></li>
-            </ul>
-            </li>
-            <li><a href="#">Pricing</a>
-                <!-- Sub-menu -->
-                <ul class="submenu">
-                    <li><a href="#">Plans</a></li>
-                    <li><a href="#">Get Quote</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Industries</a>
-                  <!-- Sub-menu -->
-                  <ul class="submenu">
-                    <li><a href="#">Education</a></li>
-                    <li><a href="#">Real estate</a></li>
-                    <li><a href="#">Government</a></li>
-                    <li><a href="#">Law</a></li>
-                    <li><a href="#">Healthcare</a></li>
-                    <li><a href="#">Banking & Finance</a></li>
-                    <li><a href="#">Manufacturing</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class="fa fa-search"></i></a>
-                  <!-- Sub-menu -->
-                  <ul class="submenu">
-                    <li> <input type="text" placeholder="visitoron">
-                        <button>GO</button>
-                    </li>
-                </ul>
-                <li><a href="#"><span class="vertical-line"></span></a></li>
-                <li><a href="login.html" class="login"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
-    
+              <!--menu-->
+    <ul class="menu">
+        <li><a href="#">Find Help</a>
+         <!-- Sub-menu -->
+         <ul class="submenu">
+            <li><a href="pages/contact.html">Contact</a></li>
+            <li><a href="pages/About.html">About</a></li>
+            <li><a href="#">Resources</a></li>
         </ul>
-    
-        <!------Assessment Btn===========-->
-        <a href="pages/get_started.html.html" class="nav-assessment-btn">Get Started</a>
+        </li>
+        <li><a href="#">Solutions</a>
+             <!-- Sub-menu -->
+            <ul class="submenu">
+            <li><a href="#">Visitor Management</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Applications</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Pricing</a>
+            <!-- Sub-menu -->
+            <ul class="submenu">
+                <li><a href="#">Plans</a></li>
+                <li><a href="#">Get Quote</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Industries</a>
+              <!-- Sub-menu -->
+              <ul class="submenu">
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Real estate</a></li>
+                <li><a href="#">Government</a></li>
+                <li><a href="#">Law</a></li>
+                <li><a href="#">Healthcare</a></li>
+                <li><a href="#">Banking & Finance</a></li>
+                <li><a href="#">Manufacturing</a></li>
+            </ul>
+        </li>
+        <li><a href="#"><i class="fa fa-search"></i></a>
+              <!-- Sub-menu -->
+              <ul class="submenu">
+                <li> <input type="text" placeholder="visitoron">
+                    <button>GO</button>
+                </li>
+            </ul>
+            <li><a href="#"><span class="vertical-line"></span></a></li>
+            <li><a href="pages/login.html" class="login"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
+
+    </ul>
+
+    <!------Assessment Btn===========-->
+    <a href="pages/get_started.html.html" class="nav-assessment-btn">Get Started</a>
     </nav>
-    <!-----==nav end==-->
-    
-    <!----============content============-->
-        
-    <main>
-        <div class="contact-container">
-            <div class="contact-form">
-                <h2>Get in Touch</h2>
-                <form action="/submit_form" method="POST">
-                    <label for="first_name">Name</label>
-                    <input type="text" id="first_name" name="first_name" required>
-
-                    <label for="company_name">Business</label>
-                    <input type="text" id="company_name" name="company_name">
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-
-
-                    <label for="phone_number">Phone Number</label>
-                    <input type="tel" id="phone_number" name="phone_number">
-
-                    <label for="message">Request Message:</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Your message here"></textarea>
-
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-
-            <div class="info-panel">
-                <h2>Quick Inquery</h2>
-                <ul>
-                    <li>TEL: 
-                        <a href="tel:+0715465463"> +254 700 010101 </a>
-                    </li>
-                    <li>Email Us: 
-                        <a href="mailto:help@VisitorOn.com">help@VisitorOn.com</a>
-                    </li>
-                    <li style="color: green;">Whatsapp: 
-                        <a href="mailto:help@VisitorOn.com" style="color: green;">+254 700 010101</a>
-                    </li>
-                    <li>Follow Us:
-                         <!---social-icons-->
-                         <div class="footer-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-x"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            
+            <h1>CONTACT US</h1>
+            <p>Hi there, need help? Fill the from or Call us 24/7</p>
+            <button id="inquireBtn">Inquire</button>
+            <p>Email: <a href="#" style="font-size: 25px; color:rgb(23, 172, 241)">help@VisitorOn.com</a></p>
+            <p>Tel: <a href="#"  style="font-size: 25px; color:rgb(23, 172, 241)">+254 700 010 101</a></p>
         </div>
-    </main>
+    </div>
+
+    <!-- Pop-up Form -->
+<div id="popupForm" class="form-popup">
+    <div class="form-container">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <h2>Inquire Form</h2>
+        <form action="#">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your fullname" required>
+
+            <label for="email">Business Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your business Email" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+254 700 101 005"  required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your Message here......" required></textarea>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</div>
+    
+    
     <!---====Footer====-->
                 <section>
                     <footer>
@@ -259,6 +307,31 @@
                             <span>Powered By Infiware Solution Ltd Copyright &copy; 2024</span>
                         </div>
                     </footer>
-                    </section>
+                    
+</section>
+<script>
+    // Get the popup form and buttons
+const inquireBtn = document.getElementById("inquireBtn");
+const popupForm = document.getElementById("popupForm");
+const closeBtn = document.getElementById("closeBtn");
+
+// Show the form when the Inquire button is clicked
+inquireBtn.addEventListener("click", function() {
+    popupForm.style.display = "block";
+});
+
+// Close the form when the close button is clicked
+closeBtn.addEventListener("click", function() {
+    popupForm.style.display = "none";
+});
+
+// Close the form when clicking outside the form
+window.addEventListener("click", function(event) {
+    if (event.target == popupForm) {
+        popupForm.style.display = "none";
+    }
+});
+
+</script>
 </body>
 </html>
