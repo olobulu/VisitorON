@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--======title=====================-->
+    <title>VisitorON</title>
+    <!---============CSS==========-->
+    <link rel="stylesheet" href="css/style.css">
+    <!---==========Fav-Icon=============----->
+    <link rel="shortcut icon" href="images/logo2.jpeg">
+    <!------==========import-poppins-font============-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!--------------font awesome for icons------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        /* Include the updated CSS from above here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .main-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            margin: 20px;
+        }
+        .text-content {
+            width: 60%;
+            padding: 20px;
+            background: white;
+            position: relative;
+        }
+        .text-content h2 {
+            font-size: 24px;
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .text-content p {
+            font-size: 16px;
+            color: #555;
+            margin: 0 0 20px;
+        }
+        .text-content .date-posted {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+        .image-content {
+            width: 35%;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+        }
+        .search-container {
+            margin: 20px;
+            text-align: center;
+        }
+        .search-container input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        .content-section {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .content-section .content-box {
+            width: 30%;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+        }
+        .content-section .content-box img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .content-section .content-box h5 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .content-section .content-box p {
+            font-size: 14px;
+            color: #555;
+            margin: 0 0 10px;
+        }
+        .content-section .content-box .date-posted {
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+   <!--========HOME SECTION============================-->
+<section id="hero">
+    <!---============nav area============-->
+    <nav class="navigation">
+    <!----menu-btn-->
+    <input type="checkbox" class="menu-btn" id="menu-btn" style="display: none;">
+    <label for="menu-btn" class="menu-icon">
+        <span class="nav-icon"></span>
+    </label>
+    
+        <!---=====logo=====-->
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="VisitorON Logo" style="height: 50px; border-radius: 5px;">
+        </a>
+        
+        <!--menu-->
+        <ul class="menu">
+            <li><a href="#">Find Help</a>
+             <!-- Sub-menu -->
+             <ul class="submenu">
+                <li><a href="pages/contact.html">Contact</a></li>
+                <li><a href="pages/About.html">About</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+            </li>
+            <li><a href="#">Solutions</a>
+                 <!-- Sub-menu -->
+                <ul class="submenu">
+                <li><a href="#">Visitor Management</a></li>
+                <li><a href="#">Integrations</a></li>
+                <li><a href="#">Applications</a></li>
+            </ul>
+            </li>
+            <li><a href="#">Pricing</a>
+                <!-- Sub-menu -->
+                <ul class="submenu">
+                    <li><a href="#">Plans</a></li>
+                    <li><a href="#">Get Quote</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Industries</a>
+                  <!-- Sub-menu -->
+                  <ul class="submenu">
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Real estate</a></li>
+                    <li><a href="#">Government</a></li>
+                    <li><a href="#">Law</a></li>
+                    <li><a href="#">Healthcare</a></li>
+                    <li><a href="#">Banking & Finance</a></li>
+                    <li><a href="#">Manufacturing</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-search"></i></a>
+                  <!-- Sub-menu -->
+                  <ul class="submenu">
+                    <li> <input type="text" placeholder="visitoron">
+                        <button>GO</button>
+                    </li>
+                </ul>
+                <li><a href="#"><span class="vertical-line"></span></a></li>
+                <li><a href="pages/login.html" class="login"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
+    
+        </ul>
+    
+        <!------Assessment Btn===========-->
+        <a href="pages/get_started.html.html" class="nav-assessment-btn">Get Started</a>
+    </nav>
+    <!-----==nav end==-->
+
+    <div class="main-section">
+        <div class="image-content">
+            <img src="images/shool.jpg" alt="Visitor Management">
+        </div>
+        <div class="text-content">
+            <h2> Why Visitor Experience Matters | <span style="color: rgba(7, 176, 228, 0.829);">Featured</span></h2>
+            <p>A HubSpot survey revealed 82% of sales professionals say building relationships is the most
+                important part of selling. And we all know first impressions last, meaning a good visitor</p>
+            <p>experience is an essential part of the process.
+                The way someone is greeted into a workplace is a critical part of the overall experience,</p>
+            <p>Posted by Peter</p>
+            <p class="date-posted">05 June, 2024</p>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <h1>Get regularly updates</h1>
+        <br>
+        <input type="text" placeholder="Enter your Email...">
+    </div>
+
+    <div class="content-section">
+        <div class="content-box">
+            <img src="images/office.jpg" alt="Image 1">
+            <h5>workplace</h5>
+            <p>shaping how a visitor perceives your workplace. Your values and principles are immediately
+                on display in the way you greet a visitor, and that has a very real impact on your business</p>
+            <div class="date-posted">01 Sep, 2024</div>
+        </div>
+        <div class="content-box">
+            <img src="images/estate.jpg" alt="Image 2">
+            <h5>Guide</h5>
+            <p>Let us guide you how to ditch visitor log books and take your business to the next level..</p>
+            <div class="date-posted">15 Sep, 2024</div>
+        </div>
+        <div class="content-box">
+            <img src="images/shool.jpg" alt="Image 3">
+            <h5>Survey</h5>
+            <p>A HubSpot survey revealed 82% of sales professionals say building relationships is the most
+                important part of selling.</p>
+            <div class="date-posted">30 Sep, 2024</div>
+        </div>
+    </div>
+</body>
+</html>
