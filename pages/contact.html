@@ -25,7 +25,7 @@
         }
         
         .overlay {
-            background-color: rgba(220, 220, 220, 0.26);
+            background-color: rgba(111, 135, 241, 0.493);
             height: 100%;
             width: 100%;
             position: relative;
@@ -37,6 +37,70 @@
             justify-content: center;
             align-items: center;
         }
+
+        
+        /* Down Arrow Styling */
+.down-arrow {
+    width: 40px;
+    height: 40px;
+    margin: -20px auto 20px; /* Adjust margins to position the arrow */
+    border-right: 5px solid rgba(0, 183, 255, 0.979); /* Adjusted from border-left to border-right */
+    border-bottom: 5px solid rgba(0, 183, 255, 0.979);
+    transform: rotate(45deg); /* This already rotates the arrow to point downwards */
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(45deg); /* Keep rotation */
+    }
+    40% {
+        transform: translateY(-10px) rotate(45deg);
+    }
+    60% {
+        transform: translateY(-5px) rotate(45deg);
+    }
+}
+/* Content Styling with Shadow */
+.content {
+    max-width: 800px;
+    margin: 0 auto; /* Horizontally centers the content */
+    text-align: center; /* Centers the text inside the content */
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0; /* Start as invisible */
+    transform: translateY(20px); /* Start slightly below its final position */
+    animation: fadeInUp 1s forwards; /* Apply the animation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    margin-bottom: 50px;
+}
+
+/* Keyframes for fade-in and slide-up effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.large-font {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.paragraph-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #000;
+}
 
         /* Pop-up form styling */
 .form-popup {
@@ -200,15 +264,18 @@ body.form-active {
     <!-----==nav end==-->   
     <div class="banner">
         <div class="overlay">
-            <h1>CONTACT US</h1>
-            <p>Hi there, need help? Fill the from or Call us 24/7</p>
-            <button id="inquireBtn" style="font-size: 25px; background-color:rgb(7, 52, 71)">Inquire</button>
-            <p>Email: <a href="#" style="font-size: 25px; color:rgb(20, 32, 37)">help@VisitorOn.com</a></p>
-            <p>Tel: <a href="#"  style="font-size: 25px; color:rgb(6, 33, 46)">+254 700 010 101</a></p>   
-    
-    </div>
+         </div>
     </div>
 
+    <div class="down-arrow"></div>
+    <div class="content">
+        <h1 class="large-font">CONTACT US</h1>
+        <p style="font-size: 30px; font-weight: 800;">Hi there, need help? Fill the from or Call us 24/7</p>
+        <button id="inquireBtn" style="font-size: 25px; background-color:rgba(0, 183, 255, 0.979); border: none;
+        border-radius: 20px;">Inquire</button>
+        <p>Email: <a href="#" style="font-size: 25px; color:rgb(20, 32, 37)">help@VisitorOn.com</a></p>
+        <p>Tel: <a href="#"  style="font-size: 25px; color:rgb(6, 33, 46)">+254 700 010 101</a></p>   
+    </div>
     <!-- Pop-up Form -->
 <div id="popupForm" class="form-popup">
     <div class="form-container">
