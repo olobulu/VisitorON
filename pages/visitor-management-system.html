@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisitorON</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!------==========import-poppins-font============-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!--------------font awesome for icons------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .banner {
+            max-width: 100%;
+            height: 400px;
+            background-image: url('images/easy.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            clip-path: ellipse(100% 80% at 50% 0%); /* Curved top edge */
+        }
+        
+        .overlay {
+            background-color: rgba(28, 73, 218, 0.575);
+            height: 100%;
+            width: 100%;
+            position: relative;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Down Arrow Styling */
+.down-arrow {
+    width: 40px;
+    height: 40px;
+    margin: -20px auto 20px; /* Adjust margins to position the arrow */
+    border-right: 5px solid rgba(0, 183, 255, 0.979); /* Adjusted from border-left to border-right */
+    border-bottom: 5px solid rgba(0, 183, 255, 0.979);
+    transform: rotate(45deg); /* This already rotates the arrow to point downwards */
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(45deg); /* Keep rotation */
+    }
+    40% {
+        transform: translateY(-10px) rotate(45deg);
+    }
+    60% {
+        transform: translateY(-5px) rotate(45deg);
+    }
+}
+
+.after-arrow {
+    max-width: 600px; /* Limit content width */
+    margin: 0 auto; /* Center the content */
+    text-align: center; /* Center-align text */
+  }
+
+  .after-arrow p {
+    text-transform: lowercase; /* Convert all text in <p> to lowercase */
+  }
+  .Visitor-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 70px; /* 40px bottom margin */
+}
+
+.image-content, .text-content {
+    width: 50%; /* Equal widths for both divs */
+}
+
+.image-content img {
+    width: 90%; /* Full width image */
+    height: auto;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 100px;
+}
+
+.text-content h1 {
+    margin-top: 40px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+.text-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.text-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.text-content li {
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.text-content li::before {
+    content: '\2713'; /* Unicode for tick/check mark */
+    position: absolute;
+    left: 0;
+    color: green;
+    font-size: 1.2rem;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color:  rgba(28, 73, 218, 0.575);
+    padding: 20px;
+    clip-path: ellipse(100% 100% at 50% 50%); /* Curved top edge */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.feature {
+    flex: 1;
+    min-width: 200px;
+    color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.icon-preregistration::before {
+    content: "📝"; /* Placeholder icon */
+    font-size: 50px;
+}
+
+.icon-sign::before {
+    content: "✍️"; /* Placeholder icon */
+    font-size: 50px;
+}
+
+.icon-fingerclick::before {
+    content: "👍"; /* Placeholder icon */
+    font-size: 50px;
+}
+
+.icon-lock::before {
+    content: "🔒"; /* Placeholder icon */
+    font-size: 50px;
+}
+
+.icon-tracing::before {
+    content: "📍"; /* Placeholder icon */
+    font-size: 50px;
+}
+
+.paintbrush-light::before {
+    content: "🎨"; /* Placeholder icon */
+    font-size: 50px;
+}
+
+
+.trusted-logos {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 30px;
+                    flex-wrap: wrap;
+                     margin: 40px 0;
+                    }
+
+        .trusted-logos img {
+            width: 80px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .trusted-logos img:hover {
+            transform: scale(1.05);
+        }
+        .benefits-section {
+            display: flex;
+            background-color: #007bff8c; /* Blue background */
+            padding: 20px;
+            color: white;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .benefit {
+            text-align: center;
+            max-width: 30%;
+        }
+
+        .benefit i {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .benefit p {
+            font-size: 16px;
+        }
+        .faq-section {
+    width: 80%;
+    margin-top: 80px;
+   margin-left: 80px;
+
+        }
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.faq-button {
+    background-color: #007BFF;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.faq-button:focus {
+    outline: none;
+}
+
+.faq-question {
+    display: inline;
+    font-weight: bold;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+h1 {
+    text-align: center; 
+    margin-top: 30px;       /* Centers the h1 text */
+    margin-bottom: 20px;       /* Adds space between the h1 and the divs */
+    font-size: 2em;            /* Increases the font size */
+}
+
+.horizontal-divs {
+    display: flex;             /* Enables Flexbox */
+    justify-content: center;   /* Centers divs horizontally */
+    align-items: flex-start;   /* Aligns divs vertically at the top */
+    background-color: #535353;    /* Sets the background color to blue */
+    padding: 20px;             /* Adds padding to the container */
+    gap: 20px;                 /* Adds space between the divs */
+}
+
+.section {
+    flex: 1;                   /* Makes each div take equal space */
+    text-align: center;        /* Centers content inside each div */
+    background-color: #ffffff; /* Sets the background color to white */
+    border-radius: 5px;        /* Adds rounded corners */
+    padding: 20px;             /* Adds space inside each section */
+    color: black;              /* Text color */
+}
+
+.section img {
+    width: 200px;              /* Sets the image width */
+    height: auto;              /* Maintains the image aspect ratio */
+    display: block;
+    margin: 0 auto 10px;       /* Centers the image and adds space below */
+}
+
+.section p {
+    margin: 0;                 /* Removes default margin on paragraph */
+    font-size: 1.2em;          /* Adjusts font size */
+}
+
+.workplace{
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh; /* Makes the div take the full viewport height */
+      flex-direction: column;
+      background-color: #ddd;
+      margin-top: 50px;
+    }
+    .workplace h1{
+        max-width: 500px;
+        font-size: 2.5rem;
+    }
+
+</style>
+</head>
+<body>
+  <!---============nav area============-->
+  <nav class="navigation">
+    <!----menu-btn-->
+    <input type="checkbox" class="menu-btn" id="menu-btn" style="display: none;">
+    <label for="menu-btn" class="menu-icon">
+        <span class="nav-icon"></span>
+    </label>
+    
+        <!---=====logo=====-->
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="VisitorON Logo" style="height: 50px; border-radius: 5px;">
+        </a>
+        
+        <!--menu-->
+        <ul class="menu">
+            <li><a href="#">Find Help</a>
+             <!-- Sub-menu -->
+             <ul class="submenu">
+                <li><a href="pages/contact.html">Contact</a></li>
+                <li><a href="pages/About.html">About</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+            </li>
+            <li><a href="#">Solutions</a>
+                 <!-- Sub-menu -->
+                <ul class="submenu">
+                <li><a href="#">Visitor Management</a></li>
+                <li><a href="#">Integrations</a></li>
+                <li><a href="#">Applications</a></li>
+            </ul>
+            </li>
+            <li><a href="#">Pricing</a>
+                <!-- Sub-menu -->
+                <ul class="submenu">
+                    <li><a href="#">Plans</a></li>
+                    <li><a href="#">Get Quote</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Industries</a>
+                  <!-- Sub-menu -->
+                  <ul class="submenu">
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Real estate</a></li>
+                    <li><a href="#">Government</a></li>
+                    <li><a href="#">Law</a></li>
+                    <li><a href="#">Healthcare</a></li>
+                    <li><a href="#">Banking & Finance</a></li>
+                    <li><a href="#">Manufacturing</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-search"></i></a>
+                  <!-- Sub-menu -->
+                  <ul class="submenu">
+                    <li> <input type="text" placeholder="visitoron">
+                        <button>GO</button>
+                    </li>
+                </ul>
+                <li><a href="#"><span class="vertical-line"></span></a></li>
+                <li><a href="pages/login.html" class="login"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
+    
+        </ul>
+    
+        <!------Assessment Btn===========-->
+        <a href="pages/get_started.html.html" class="nav-assessment-btn">Get Started</a>
+    </nav>
+    <!-----==nav end==-->   
+    <div class="banner">
+        <div class="overlay">
+        </div>
+    </div>
+    <div class="down-arrow"></div>
+
+    <div class="after-arrow">
+        <h1>Let’s get you simple & easy <sap style="color:rgba(0, 183, 255, 0.979);">visitor management system</sap></h1>
+        <p>We help you welcome visitors at the gate & door in style. The automated
+            process helps you monitor and track insights on your visitors.</p>
+    </div>
+    <div id="plans" style="text-align: center; margin-top: 40px;">
+        <h1><span style="color:rgba(0, 183, 255, 0.979);">Automate your visitor sign in</span> and free up your staff</h1>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 10px; padding: 10px;">
+          
+          <!-- Basic Plan -->
+          <div class="plan-card" style="border: 1px solid #ccc; padding: 20px; margin: 5px; width: 250px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <i class="fa fa-check-circle" style="font-size: 24px; color: rgba(0, 183, 255, 0.979);"></i>
+            <h2>Simple sign in</h2>
+            <p>Our easy visitor sign in system lets guests use their own phone or an iPad or tablet at your reception.</p>
+          </div>
+      
+          <!-- Standard Plan -->
+          <div class="plan-card" style="border: 1px solid #ccc; padding: 20px; margin: 5px; width: 250px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <i class="fa fa-calendar-check" style="font-size: 24px; color: rgba(0, 183, 255, 0.979);"></i>
+            <h2>Advanced tracking</h2>
+            <p>Track visitor history, and get detailed insights and analytics on all visits at your premises.</p>
+          </div>
+      
+          <!-- Premium Plan -->
+          <div class="plan-card" style="border: 1px solid #ccc; padding: 20px; margin: 5px; width: 250px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <i class="fa fa-mobile" style="font-size: 24px; color: rgba(0, 183, 255, 0.979);"></i>
+            <h2>Mobile friendly</h2>
+            <p>Guests can sign in using their own mobile devices without needing to touch anything in the reception area.</p>
+         </div>
+      
+          <!-- Enterprise Plan -->
+          <div class="plan-card" style="border: 1px solid #ccc; padding: 20px; margin: 5px; width: 250px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <i class="fa fa-user-shield" style="font-size: 24px; color: rgba(0, 183, 255, 0.979);"></i>
+            <h2>Enterprise security</h2>
+            <p>Ensure the highest level of security for your premises with advanced visitor management features.</p>
+         </div>
+      
+        </div>
+    </div>
+
+    <div class="Visitor-in">
+        <div class="image-content">
+            <img src="images/welcome.JPG" alt="Visitor Management">
+        </div>
+        <div class="text-content">
+            <h1>Customizable visitor check in</h1>
+            <h2>Create your <span style="color: rgba(0, 183, 255, 0.979);">custom visitor welcome</span> from the <span  style="color:rgba(0, 183, 255, 0.979);">VisitorOn</span> web dashboard</h2>
+            <p>
+                <li>Offer kiosk and/or contactless visitor check in options</li>
+
+                <li>Determine what information you require for each type of visitor, ask visitor screening questions and design the sign in flow to suit</li>
+                
+                <li>Cover compliance requirements with the ability to show custom NDA's and request documents from visitors when they sign in</li>
+            </p>
+        </div>
+    </div>
+
+    <div class="Visitor-in" style="margin-left: 40px;">
+        <div class="text-content">
+            <h1>Visitor registration made easy</h1>
+            <h2>Wow your visitors with a <span style="color: rgba(0, 183, 255, 0.979);">professional first impression</span></h2>
+            <p>
+                <li>Make VisitorOn unique to your workplace with customizable branding</li>
+
+                <li>Seamlessly notify hosts of their guests arrival with the help of the VisitorOn Pocket app</li>
+                
+                <li>Easily identify guests with photo capture and printed visitor ID badges</li>
+            </p>
+        </div>
+        <div class="image-content">
+            <img src="images/easy.png" alt="Visitor Management" style="margin-top: 5px;">
+        </div>
+    </div>
+
+    <div class="Visitor-in">
+        <div class="image-content">
+            <img src="images/welcome_1.JPG" alt="Visitor Management">
+        </div>
+        <div class="text-content" style="margin-top: 80px;">
+            <h1>Accurate visitor log</h1>
+            <h2>Total visibility and <span style="color: rgba(0, 183, 255, 0.979);">accurate reporting</span> across your workplace</h2>
+            <p>
+                <li>The web dashboard pages automatically update to give you up-to-date information of who is where, when and why</li>
+
+                <li>Sort, filter and export visitor data at the touch of a button whenever you need it</li>
+                
+                <li>Conduct roll-calls with the latest information in the event of an emergency</li>
+            </p>
+        </div>
+    </div>
+
+    <div class="join" style="max-width: 800px; width: 100%; text-align: center; padding: 20px; position: relative; top: 50%; 
+    left: 50%; transform: translate(-50%, -50%); background-color: rgba(247, 243, 243, 0.37); margin-top: 80px;">
+        <i class="fa fa-percent" style="font-size: 44px; color: rgba(0, 183, 255, 0.979); display: block; margin-bottom: 10px;"></i>
+        <h1 style="font-size: 34px; line-height: 1.4;">
+            <span style="color: rgba(0, 183, 255, 0.979);">82% of companies see an increase in operational efficiency</span> 
+            when they implement a visitor management system.
+        </h1>
+        <p style="color: rgba(0, 183, 255, 0.979); margin-top: 20px;">Ready to join them?</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="feature">
+                <i class="icon-preregistration"></i>
+                <h3>Visitor Preregistration</h3>
+                <p>Ensure visitors are informed and prepared. Register them in advance and send automated inductions and preboarding that can be completed before they arrive.</p>
+            </div>
+            <div class="feature">
+                <i class="icon-sign"></i>
+                <h3>Digital Agreements</h3>
+                <p>Have your visitors sign legal documents such as NDAs and store a digital copy for your records.</p>
+            </div>
+            <div class="feature">
+                <i class="icon-fingerclick"></i>
+                <h3>Approvals</h3>
+                <p>Approve or deny entry to your premises based on question responses and/or randomization (e.g., every 1 in 10 visitors requires approval).</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="feature">
+                <i class="icon-lock"></i>
+                <h3>Data Security</h3>
+                <p>Be audit-ready with compliant, digital records of everyone that has been on your premises. Have total peace of mind knowing your business data is securely stored using AWS-provided encryption.</p>
+            </div>
+            <div class="feature">
+                <i class="icon-tracing"></i>
+                <h3>Custom Categories</h3>
+                <p>Different visitor categories allow you to tailor the services and information you provide. For example, potential clients might receive a guided tour, while delivery personnel are directed to loading docks.</p>
+            </div>
+            <div class="feature">
+                <i class="paintbrush-light"></i>
+                <h3>Customizable Branding</h3>
+                <p>Display your logo, branding, and colors. Add your images for a static background or engaging slideshow.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="Visitor-in">
+        <div class="image-content">
+            <img src="images/got_us_here.jpg" alt="Visitor Management">
+        </div>
+        <div class="text-content" style="margin-top: 100px;">
+            <h2>Global airline catering business gategroup <span style="color: rgba(0, 183, 255, 0.979);"> scales visitor management operations </span> with VisitorOn</h2>
+            <p>
+                Love it or hate it, airplane food is big business. gategroup, 
+                a global leader in airline catering and provisioning services,
+                has experienced firsthand how a visitor management system can improve operations, 
+                save time (and money), and help them meet critical health and safety regulations.
+            </p>
+            <p style="text-align: center; margin-top: 40px; color: rgba(0, 183, 255, 0.979); font-size: 15px;">Read full story</p>
+        </div>
+    </div>
+
+    <div>
+        <h2 style="text-align: center; font-size: 25px; margin-top: 50px;">Trusted by thousands of companies worldwide</h2>
+        <div class="trusted-logos">
+            <img src="images/KCB.png" alt="Client Logo 1">
+            <img src="images/MARA.jfif" alt="Client Logo 2">
+            <img src="images/Kenyatta.png" alt="Client Logo 3">
+            <img src="images/UON.jfif" alt="Client Logo 4">
+            <img src="images/MARA.jfif" alt="Client Logo 2">
+            <img src="images/Kenyatta.png" alt="Client Logo 3">
+        </div>
+    </div>
+
+    <div class="benefits-section">
+        <div class="benefit">
+            <i class="fa fa-lock"></i>
+            <p>Meet compliance requirements. Stay audit-ready with detailed digital records of everyone who has been on your premises. VisitorOn helps reduce human error and protect the personal information of your visitors & employees with accurate records in a single database.</p>
+        </div>
+        <div class="benefit">
+            <i class="fa fa-cogs"></i>
+            <p>Streamline operations. Automate the entire visitor management process from end to end. Visitors can be easily registered and complete any preboarding requirements ahead of time. When they arrive, VisitorOn automatically notifies their host and can even send a reminder if they have not signed out after a certain period.</p>
+        </div>
+        <div class="benefit">
+            <i class="fa fa-rocket"></i>
+            <p>Scale across your workplace. The VisitorOn Dashboard provides a unified view of visitors across all your locations. This insight helps to improve security, streamline processes, and increase compliance company-wide.</p>
+        </div>
+    </div>
+    <!-- Include Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <div class="faq-section">
+        <div class="faq-item">
+            <button class="faq-button">+</button>
+            <div class="faq-question">What is a visitor management system?</div>
+            <div class="faq-answer">A visitor management system is a software solution that helps organizations manage and track visitors, including their check-in/check-out times, purpose of visit, and other details.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-button">+</button>
+            <div class="faq-question">Why is visitor management important?</div>
+            <div class="faq-answer">Visitor management is important for ensuring security, enhancing operational efficiency, and maintaining compliance with regulations. It helps organizations keep track of who is on their premises and for what purpose.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-button">+</button>
+            <div class="faq-question">How do visitors sign in with VisitorOn?</div>
+            <div class="faq-answer">Visitors sign in with VisitorOn by using a touchscreen kiosk to enter their details. They can also sign in using a pre-registration link sent via email or SMS.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-button">+</button>
+            <div class="faq-question">How can I use a visitor management system to help in emergency evacuations?</div>
+            <div class="faq-answer">A visitor management system can help in emergency evacuations by providing real-time data on who is on-site, which can be used to ensure that everyone is accounted for and safely evacuated.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-button">+</button>
+            <div class="faq-question">How does a visitor management system help with compliance?</div>
+            <div class="faq-answer">A visitor management system helps with compliance by maintaining accurate records of visitors and their activities, which can be useful for audits and ensuring adherence to industry regulations.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-button">+</button>
+            <div class="faq-question">How do I create a visitor management system?</div>
+            <div class="faq-answer">Creating a visitor management system involves defining the requirements, selecting the appropriate technology, developing the software, and implementing it within your organization. You may also consider using pre-built solutions that can be customized to meet your needs.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-button">+</button>
+            <div class="faq-question">What features should I look for in a visitor management system?</div>
+            <div class="faq-answer">Look for features such as visitor check-in/check-out, badge printing, integration with existing systems, reporting capabilities, and support for multiple languages and accessibility options.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-button">+</button>
+            <div class="faq-question">Why is a cloud-based visitor management system useful?</div>
+            <div class="faq-answer">A cloud-based visitor management system is useful because it allows for easy access from any location, ensures data is backed up and secure, and can scale with your organization's needs without requiring extensive on-premises infrastructure.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-button">+</button>
+            <div class="faq-question">Does a visitor management system help with security?</div>
+            <div class="faq-answer">Yes, a visitor management system helps with security by tracking who enters and exits the premises, verifying visitor identities, and providing alerts or reports on suspicious activities.</div>
+        </div>
+    </div>
+
+    <h1>Visitor Management System</h1>
+<div class="horizontal-divs">
+    <div class="section">
+        <img src="images/shool.jpg" alt="Image 1">
+        <p>Plan & Pricing</p>
+    </div>
+    <div class="section">
+        <img src="images/office.jpg" alt="Image 2">
+        <p>More Features</p>
+    </div>
+    <div class="section">
+        <img src="images/estate.jpg" alt="Image 3">
+        <p>Our blogs</p>
+    </div>
+</div>
+
+<div class="workplace">
+    <h1><span style="color: rgba(0, 183, 255, 0.979);;">Over 9,000 workplaces </span> are already working smarter with VisitorOn</h1>
+    <p>Ready to join them? Get started in under 5 minutes</p>
+    <p>Still have questions? <span style="color: rgba(0, 183, 255, 0.979);">Get in touch.</span></p>
+</div>
+
+<!---====Footer====-->
+<section>
+    <footer>
+        <div class="footer-container">
+            
+            <!-----***company-box****-->
+            <div class="footer-company-box">
+                <!---logo-->
+                <img src="images/logo.png" alt="VisitorON Logo" style="height: 50px; border-radius: 5px;">
+                <!---details-->
+                <p>Contact Our dedicated team, through social links.</p>
+                <!---social-icons-->
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-x"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div><!----------company-box-end------>
+            <!---********link************-->
+            <div class="footer-link-box">
+                <strong>Main Link's</strong>
+                <ul>
+                    <li><a href="#">Find-help</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Industries</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div><!----------link-box-end------>
+            <!---********link************-->
+            <div class="footer-link-box">
+            </div><!----------link-box-end------>
+        </div><!----====container-end====-->
+
+        <!---****bottom-footer****-->
+        <div class="footer-bottom">
+            <span>Powered By Infiware Solution Ltd Copyright &copy; 2024</span>
+        </div>
+    </footer>
+    </section>
+<script>
+document.querySelectorAll('.faq-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const answer = this.nextElementSibling.nextElementSibling;
+        if (answer.style.display === 'none' || answer.style.display === '') {
+            answer.style.display = 'block';
+            this.textContent = '−';
+        } else {
+            answer.style.display = 'none';
+            this.textContent = '+';
+        }
+    });
+});
+</script>
+</body>
+</html>
